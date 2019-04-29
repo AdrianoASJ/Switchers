@@ -32,61 +32,63 @@ export default class Home extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.nameAndSwitchers}>
-          <Switch
-            style={styles.posicaoSwitchers}
-            onValueChange={this._handleToggleSwitch}
-            value={this.state.switchValue}
-          />
-          <View style={styles.nameSwitchers}>
-            <Text style={styles.textSwitchers}>Plano A</Text>
-          </View>
-        </View>
-
-        <View style={styles.nameAndSwitchers}>
-          <Switch
-            style={styles.posicaoSwitchers}
-            onValueChange={this._handleToggleSwitch2}
-            value={this.state.switchValue2}
-          />
-
-          <View style={styles.nameSwitchers}>
-            <Text style={styles.textSwitchers}>Plano B</Text>
-          </View>
-        </View>
-
-        <View style={styles.nameAndSwitchers}>
-          <Switch
-            style={styles.posicaoSwitchers}
-            onValueChange={this._handleToggleSwitch3}
-            value={this.state.switchValue3}
-          />
-
-          <View style={styles.nameSwitchers}>
-            <Text style={styles.textSwitchers}>Plano C</Text>
-          </View>
-        </View>
-        <View>
-          {this.state.switchValue ? (
-            <View style={styles.planosAberto}>
-              <Text>Mateus</Text>
+      <View style={styles.container_bigger}>
+        <View style={styles.container}>
+          <View style={styles.nameAndSwitchers}>
+            <Switch
+              style={styles.posicaoSwitchers}
+              onValueChange={this._handleToggleSwitch}
+              value={this.state.switchValue}
+            />
+            <View style={styles.nameSwitchers}>
+              <Text style={styles.textSwitchers}>Plano A</Text>
             </View>
-          ) : null}
-        </View>
-        <View>
-          {this.state.switchValue2 ? (
-            <View style={styles.planosAberto}>
-              <Text>é</Text>
+          </View>
+
+          <View style={styles.nameAndSwitchers}>
+            <Switch
+              style={styles.posicaoSwitchers}
+              onValueChange={this._handleToggleSwitch2}
+              value={this.state.switchValue2}
+            />
+
+            <View style={styles.nameSwitchers}>
+              <Text style={styles.textSwitchers}>Plano B</Text>
             </View>
-          ) : null}
-        </View>
-        <View>
-          {this.state.switchValue3 ? (
-            <View style={styles.planosAberto}>
-              <Text>Bitchola</Text>
+          </View>
+
+          <View style={styles.nameAndSwitchers}>
+            <Switch
+              style={styles.posicaoSwitchers}
+              onValueChange={this._handleToggleSwitch3}
+              value={this.state.switchValue3}
+            />
+
+            <View style={styles.nameSwitchers}>
+              <Text style={styles.textSwitchers}>Plano C</Text>
             </View>
-          ) : null}
+          </View>
+          <View>
+            {this.state.switchValue ? (
+              <View style={styles.planosAberto}>
+                <Text>Mateus</Text>
+              </View>
+            ) : null}
+          </View>
+          <View>
+            {this.state.switchValue2 ? (
+              <View style={styles.planosAberto}>
+                <Text>é</Text>
+              </View>
+            ) : null}
+          </View>
+          <View>
+            {this.state.switchValue3 ? (
+              <View style={styles.planosAberto}>
+                <Text>Bitchola</Text>
+              </View>
+            ) : null}
+          </View>
         </View>
       </View>
     );
@@ -94,10 +96,15 @@ export default class Home extends Component {
 }
 
 const styles = StyleSheet.create({
+  container_bigger: {
+    backgroundColor: "#633dac"
+  },
+
   container: {
     alignItems: "flex-start",
-    paddingTop: Constants.statusBarHeight,
-    backgroundColor: "#f1f1f1"
+    backgroundColor: "#f1f1f1",
+    margin: 10,
+    borderRadius: 30
   },
 
   planosInfo: {
@@ -106,7 +113,7 @@ const styles = StyleSheet.create({
   },
 
   planosAberto: {
-    backgroundColor: "red",
+    marginLeft: 40,
     margin: 10
   },
 
