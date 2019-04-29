@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { View, StyleSheet, Switch, Text } from "react-native";
+import { View, Switch, Text } from "react-native";
 import { Constants } from "expo";
+import Estilos from "./Estilos";
 
 export default class Home extends Component {
   state = {
@@ -32,60 +33,66 @@ export default class Home extends Component {
 
   render() {
     return (
-      <View style={styles.container_bigger}>
-        <View style={styles.container}>
-          <View style={styles.nameAndSwitchers}>
+      <View style={Estilos.container_bigger}>
+        <View style={Estilos.container}>
+          <View style={Estilos.nameAndSwitchers}>
             <Switch
-              style={styles.posicaoSwitchers}
+              style={Estilos.posicaoSwitchers}
               onValueChange={this._handleToggleSwitch}
               value={this.state.switchValue}
             />
-            <View style={styles.nameSwitchers}>
-              <Text style={styles.textSwitchers}>Plano A</Text>
+            <View style={Estilos.nameSwitchers}>
+              <Text style={Estilos.textSwitchers}>Plano Ouro</Text>
             </View>
           </View>
 
-          <View style={styles.nameAndSwitchers}>
+          <View style={Estilos.nameAndSwitchers}>
             <Switch
-              style={styles.posicaoSwitchers}
+              style={Estilos.posicaoSwitchers}
               onValueChange={this._handleToggleSwitch2}
               value={this.state.switchValue2}
             />
 
-            <View style={styles.nameSwitchers}>
-              <Text style={styles.textSwitchers}>Plano B</Text>
+            <View style={Estilos.nameSwitchers}>
+              <Text style={Estilos.textSwitchers}>Plano Prata</Text>
             </View>
           </View>
 
-          <View style={styles.nameAndSwitchers}>
+          <View style={Estilos.nameAndSwitchers}>
             <Switch
-              style={styles.posicaoSwitchers}
+              style={Estilos.posicaoSwitchers}
               onValueChange={this._handleToggleSwitch3}
               value={this.state.switchValue3}
             />
 
-            <View style={styles.nameSwitchers}>
-              <Text style={styles.textSwitchers}>Plano C</Text>
+            <View style={Estilos.nameSwitchers}>
+              <Text style={Estilos.textSwitchers}>Plano Bronze</Text>
             </View>
           </View>
           <View>
             {this.state.switchValue ? (
-              <View style={styles.planosAberto}>
-                <Text>Mateus</Text>
+              <View style={Estilos.planosAberto}>
+                <Text>
+                  Plano Ouro, Faça aquilo que ama quando você menos notar vai
+                  estar ganhando oque realmente merece{" "}
+                </Text>
               </View>
             ) : null}
           </View>
           <View>
             {this.state.switchValue2 ? (
-              <View style={styles.planosAberto}>
-                <Text>é</Text>
+              <View style={Estilos.planosAberto}>
+                <Text>
+                  Plata ou Plumo, Procure expandir seus horizontes, novas
+                  tecnoligias nova culturas
+                </Text>
               </View>
             ) : null}
           </View>
           <View>
             {this.state.switchValue3 ? (
-              <View style={styles.planosAberto}>
-                <Text>Bitchola</Text>
+              <View style={Estilos.planosAberto}>
+                <Text>Plano Bronze, Be Strong</Text>
               </View>
             ) : null}
           </View>
@@ -94,64 +101,3 @@ export default class Home extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container_bigger: {
-    backgroundColor: "#633dac"
-  },
-
-  container: {
-    alignItems: "flex-start",
-    backgroundColor: "#f1f1f1",
-    margin: 10,
-    borderRadius: 30
-  },
-
-  planosInfo: {
-    backgroundColor: "red",
-    margin: 10
-  },
-
-  planosAberto: {
-    marginLeft: 40,
-    margin: 10
-  },
-
-  texto: {
-    color: "#fff"
-  },
-
-  planosFexado: {
-    backgroundColor: "blue",
-    margin: 10
-  },
-
-  posicaoSwitchers: {
-    margin: 10
-  },
-
-  nameSwitchers: {
-    margin: 10
-  },
-
-  textSwitchers: {
-    fontSize: 20,
-    color: "red",
-    fontWeight: "bold"
-  },
-
-  nameAndSwitchers: {
-    flexDirection: "row",
-    margin: 10
-  },
-
-  botaoPlanos: {
-    color: "blue",
-    width: 260,
-    height: 50,
-    padding: 15,
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: 50
-  }
-});
