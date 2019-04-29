@@ -1,8 +1,21 @@
 import { StyleSheet } from "react-native";
 
+slide_container = () => {};
+
 const Estilos = StyleSheet.create({
   container_bigger: {
-    backgroundColor: "#633dac"
+    flex: 1,
+    backgroundColor: "#00151b"
+  },
+
+  color1: {
+    backgroundColor: "#00151b"
+  },
+  color2: {
+    backgroundColor: "#002832"
+  },
+  color3: {
+    backgroundColor: "#0062AA"
   },
 
   container: {
@@ -41,7 +54,7 @@ const Estilos = StyleSheet.create({
 
   textSwitchers: {
     fontSize: 20,
-    color: "red",
+    color: "#0062AA",
     fontWeight: "bold"
   },
 
